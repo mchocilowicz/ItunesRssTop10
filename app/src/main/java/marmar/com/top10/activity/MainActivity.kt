@@ -18,7 +18,7 @@ class MainActivity : BaseActivity() {
     private val TAG = "MainActivity"
 
     private var feedLimit = 10
-    private var feedUrl = 0
+    private var feedUrl = R.string.topFreeURL
     private var feedCachedUrl = -1
     private var cachedLimit = 10
     private val STATE_URL = "feedURL"
@@ -35,7 +35,7 @@ class MainActivity : BaseActivity() {
             feedUrl = savedInstanceState.getInt(STATE_URL)
             feedLimit = savedInstanceState.getInt(STATE_LIMIT)
         }
-        downloadUrl(R.string.topFreeURL, cachedLimit)
+        downloadUrl(feedUrl, cachedLimit)
     }
 
     override fun onDestroy() {
